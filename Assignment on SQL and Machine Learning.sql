@@ -12,6 +12,7 @@ FROM (SELECT customers.customer_no AS cust_no,
                     ON customers.customer_no = orders.customer_no
       WHERE orders.order_date >= '2003-01-01'
         AND orders.order_date <= '2003-12-31'
+        AND orders.status = "Shipped"
       GROUP BY customers.customer_no
       ORDER BY customers.customer_no ASC) total_completed_orders_2003_table
          left join
@@ -23,6 +24,7 @@ FROM (SELECT customers.customer_no AS cust_no,
                     ON customers.customer_no = orders.customer_no
       WHERE orders.order_date >= '2004-01-01'
         AND orders.order_date <= '2004-12-31'
+        AND orders.status = "Shipped"
       GROUP BY customers.customer_no
       ORDER BY customers.customer_no ASC) total_completed_orders_2004_table
      ON total_completed_orders_2003_table.cust_no = total_completed_orders_2004_table.cust_no
@@ -35,6 +37,7 @@ FROM (SELECT customers.customer_no AS cust_no,
                     ON customers.customer_no = orders.customer_no
       WHERE orders.order_date >= '2005-01-01'
         AND orders.order_date <= '2005-12-31'
+        AND orders.status = "Shipped"
       GROUP BY customers.customer_no
       ORDER BY customers.customer_no ASC) total_completed_orders_2005_table
      ON total_completed_orders_2003_table.cust_no = total_completed_orders_2005_table.cust_no;
@@ -51,6 +54,7 @@ FROM (SELECT customers.customer_no AS cust_no,
                     ON customers.customer_no = orders.customer_no
       WHERE orders.order_date >= '2003-01-01'
         AND orders.order_date <= '2003-12-31'
+        AND orders.status = "Shipped"
       GROUP BY customers.customer_no
       ORDER BY customers.customer_no ASC) total_completed_orders_2003_table
          RIGHT JOIN
@@ -62,6 +66,7 @@ FROM (SELECT customers.customer_no AS cust_no,
                     ON customers.customer_no = orders.customer_no
       WHERE orders.order_date >= '2004-01-01'
         AND orders.order_date <= '2004-12-31'
+        AND orders.status = "Shipped"
       GROUP BY customers.customer_no
       ORDER BY customers.customer_no ASC) total_completed_orders_2004_table
      ON total_completed_orders_2003_table.cust_no = total_completed_orders_2004_table.cust_no
@@ -74,6 +79,7 @@ FROM (SELECT customers.customer_no AS cust_no,
                     ON customers.customer_no = orders.customer_no
       WHERE orders.order_date >= '2005-01-01'
         AND orders.order_date <= '2005-12-31'
+        AND orders.status = "Shipped"
       GROUP BY customers.customer_no
       ORDER BY customers.customer_no ASC) total_completed_orders_2005_table
      ON total_completed_orders_2004_table.cust_no = total_completed_orders_2005_table.cust_no;
