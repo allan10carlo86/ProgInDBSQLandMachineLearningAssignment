@@ -1,3 +1,11 @@
+/*
+ SQL For Machine Learning: Allan Carlo T. Ramos
+ Description: Shows the solution for the question in the Machine Learning
+ Date Created: March 7, 2023
+ Log Changes:
+ -  March 7 2023   | Allan Carlo T. Ramos |    Initial Draft
+ */
+
 use fillians_toy_shop;
 
 SELECT total_completed_orders_2003_table.cust_no,
